@@ -9,7 +9,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif;}
-body{background:#0a0a0a;color:white;overflow-x:hidden;}
+body{background:#070707;color:white;overflow-x:hidden;}
 
 /* NAV */
 nav{
@@ -26,85 +26,131 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:url("profile.jpeg") center/cover no-repeat;
 position:relative;
+background:
+linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
+url("profile.jpeg") center/cover no-repeat;
 }
-header::before{
+
+header::after{
 content:"";
-position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,0.75);
+position:absolute;
+width:100%;
+height:100%;
+background:radial-gradient(circle at center, rgba(255,0,0,0.18), transparent 65%);
+z-index:0;
 }
+
 .hero-content{
-position:relative;z-index:1;
-background:rgba(0,0,0,0.5);
-padding:40px;border-radius:20px;
-box-shadow:0 0 40px #ff0000;
+position:relative;
+z-index:2;
+background:rgba(0,0,0,0.55);
+padding:45px;
+border-radius:22px;
+box-shadow:0 0 40px #ff0000,0 0 80px rgba(255,0,0,0.35);
+backdrop-filter:blur(6px);
+max-width:600px;
 }
-.hero-content h1{font-size:4rem;color:#ff0000;text-shadow:0 0 20px #ff0000;}
+
+.hero-content h1{
+font-size:4rem;
+color:#ff0000;
+text-shadow:0 0 10px #ff0000,0 0 25px #ff0000,0 0 50px rgba(255,0,0,0.7);
+letter-spacing:3px;
+}
+
 .uid-box{
-margin-top:15px;background:rgba(255,0,0,0.2);
-padding:10px 20px;border-radius:30px;
-display:inline-block;box-shadow:0 0 20px #ff0000;
+margin-top:15px;
+background:rgba(255,0,0,0.25);
+padding:12px 25px;
+border-radius:30px;
+display:inline-block;
+box-shadow:0 0 20px #ff0000;
+}
+
+/* SUBSCRIBE BUTTON */
+.subscribe-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 35px;
+font-size:18px;
+color:white;
+border:2px solid #ff0000;
+border-radius:40px;
+text-decoration:none;
+letter-spacing:1px;
+transition:0.35s;
+box-shadow:0 0 15px #ff0000,0 0 35px rgba(255,0,0,0.5);
+}
+.subscribe-btn:hover{
+background:white;color:black;
+box-shadow:0 0 25px white,0 0 45px #ff0000;
+transform:scale(1.05);
+}
+
+/* JOIN BUTTON */
+.join-btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 35px;
+font-size:18px;
+color:white;
+border:2px solid #ff0000;
+border-radius:40px;
+text-decoration:none;
+letter-spacing:1px;
+transition:0.35s;
+box-shadow:0 0 15px #ff0000,0 0 35px rgba(255,0,0,0.5);
+}
+.join-btn:hover{
+background:white;color:black;
+box-shadow:0 0 25px white,0 0 45px #ff0000;
+transform:scale(1.05);
 }
 
 /* SECTION */
-section{padding:100px 20px;text-align:center;}
-h2{font-size:2.5rem;margin-bottom:30px;color:#ff0000;text-shadow:0 0 15px #ff0000;}
+section{padding:110px 20px;text-align:center;}
+h2{font-size:2.6rem;margin-bottom:35px;color:#ff0000;text-shadow:0 0 15px #ff0000;}
 
-/* 🔥 GUILD CLEAN POSTER */
+/* GUILD */
 .guild-banner{
-max-width:1000px;
-margin:auto;
-border-radius:20px;
-overflow:hidden;
+max-width:1000px;margin:auto;border-radius:20px;overflow:hidden;
 box-shadow:0 0 60px #ff0000;
 }
+.guild-banner img{width:100%;display:block;}
 
-.guild-banner img{
-width:100%;
-display:block;
-}
-
-/* TEXT BOX BELOW IMAGE */
 .guild-info{
-max-width:1000px;
-margin:25px auto 0;
-background:#111;
-padding:25px;
-border-radius:20px;
-text-align:left;
-box-shadow:0 0 30px #ff000044;
+max-width:1000px;margin:30px auto 0;background:#111;padding:30px;
+border-radius:20px;text-align:left;box-shadow:0 0 30px #ff000044;
+font-size:18px;line-height:1.7;
 }
 
-.leader{color:#ff0000;font-weight:bold;}
-.co-leader{color:#ff6600;font-weight:bold;}
-.officer{color:#ff4444;font-weight:bold;}
+.leader{
+color:#ff0000;font-weight:bold;font-size:22px;
+text-shadow:0 0 10px #ff0000,0 0 25px #ff0000,0 0 50px rgba(255,0,0,0.8);
+}
+.co-leader{
+color:#ff9900;font-weight:bold;font-size:21px;
+text-shadow:0 0 10px #ff9900,0 0 25px #ff7700,0 0 45px rgba(255,120,0,0.7);
+}
+.officer{
+color:#ff4444;font-weight:bold;font-size:20px;
+text-shadow:0 0 10px #ff4444,0 0 25px #ff0000,0 0 40px rgba(255,0,0,0.6);
+}
 
 /* VIDEOS */
 .videos{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
-.video-card{
-background:#111;padding:10px;border-radius:15px;
-transition:0.3s;box-shadow:0 0 15px #ff000033;
-}
+.video-card{background:#111;padding:12px;border-radius:15px;transition:0.3s;box-shadow:0 0 15px #ff000033;}
+.video-card:hover{transform:scale(1.05);}
 .thumbnail{position:relative;overflow:hidden;border-radius:10px;}
 .thumbnail img{width:100%;}
-.play-btn{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-font-size:3rem;color:#ff0000;
-}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:#ff0000;}
 
 /* CONTACT */
-.contact-box{
-background:#111;padding:25px;border-radius:15px;
-display:inline-block;box-shadow:0 0 20px #ff000033;
-}
+.contact-box{background:#111;padding:25px;border-radius:15px;display:inline-block;box-shadow:0 0 20px #ff000033;}
 
 /* FOOTER */
-footer{
-background:#000;padding:20px;text-align:center;
-border-top:1px solid #ff0000;
-}
+footer{background:#000;padding:20px;text-align:center;border-top:1px solid #ff0000;}
 </style>
 </head>
 
@@ -123,6 +169,11 @@ border-top:1px solid #ff0000;
 <h1>DCX JAYESH</h1>
 <p>Free Fire Gaming • Event Spins • Legendary Unlocks</p>
 <div class="uid-box">🔥 Free Fire UID: 7030651633</div>
+
+<a class="subscribe-btn" href="https://www.youtube.com/" target="_blank">
+SUBSCRIBE CHANNEL
+</a>
+
 </div>
 </header>
 
@@ -134,7 +185,6 @@ Join the DCX Squad and level up your gaming experience!
 </p>
 </section>
 
-<!-- 🔥 CLEAN GUILD SECTION -->
 <section id="guild">
 <h2>🔥 My Free Fire Guild</h2>
 
@@ -153,6 +203,12 @@ Join the DCX Squad and level up your gaming experience!
 <li><span class="officer">DCX VISHAL</span> UID: 4994803886</li>
 </ul>
 </div>
+
+<br><br>
+
+<a class="join-btn" href="https://ff.garena.com/" target="_blank">
+🔥 JOIN THE GUILD
+</a>
 
 </section>
 
